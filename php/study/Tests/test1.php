@@ -30,5 +30,8 @@ echo "I have a $color $car.";
 <?php include 'edit.php';?>
 <br>
 <?php include 'footer.php';?>
+
+<?php include '../Config/configconst.inc.php';
+echo constant("TESTVAR1");?>
 </body>
 </html>
