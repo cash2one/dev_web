@@ -46,6 +46,12 @@ echo $test_v2['testv_2_2'];
 ?>
 
 <br>
+<?php include '../DBMySQL/DBConnect.php';
+?>
+<br>
+<?php include '../DBMySQL/SQLCreate.php';
+?>
+
 <?php include 'footer.php';?>
 </body>
 </html>
