@@ -1,7 +1,7 @@
 <?php
 $color='银色的';
 $car='奔驰轿车';
-$intvalue = $GLOBALS['inttest'];
+//$intvalue = $GLOBALS['inttest'];
 
 /*
  * 超全局变量是：
@@ -15,7 +15,7 @@ $_ENV
 $_COOKIE
 $_SESSION
 */
-if (!$intvalue) {
+if (!isset($GLOBALS['inttest'])) {
 	$GLOBALS['inttest'] = 1;	
 }
 
