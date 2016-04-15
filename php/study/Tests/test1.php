@@ -57,6 +57,9 @@ echo $test_v2['testv_2_2'];
 <?php include '../DBMySQL/SQLCreate.php';
 ?>
 
+<?php include '../Net/curl/test_curlsimple1.php';
+    NetTest1::simpleTest1();
+?>
 <?php include 'footer.php';?>
 </body>
 </html>
