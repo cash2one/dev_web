@@ -41,17 +41,20 @@ Mantis (MantisBT) 是一个BUG管理系统。主要特点如下
 http://www.mantisbt.org/
 https://sourceforge.net/projects/mantisbt/files/mantis-stable/
 =============================================================================
+微信PHP快速开发框架
+http://git.oschina.net/lane/LaneWeChat
+http://www.oschina.net/p/lanewechat
+=============================================================================
+PHP之道
+http://wulijun.github.io/php-the-right-way/
 
-
-
+http://php.net/manual/en/language.oop5.php
 =============================================================================
 
-
-
-=============================================================================
-
-
-
+Agile Toolkit 是一个高性能的 PHP 框架，用于 Web UI 的开发，基于 jQuery
+使用 Agile Toolkit 开发 UI 效率是非常高的，因为它已经帮你无缝的绑定了数据库和界面以及安全方面的集成
+http://www.oschina.net/p/agiletoolkit
+http://www.agiletoolkit.org/
 =============================================================================
 
 
