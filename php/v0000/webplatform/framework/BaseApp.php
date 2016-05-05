@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * BaseApp - a micro PHP 5 framework
  *
@@ -27,14 +27,14 @@ class BaseApp {
     /**
      * 容器
      * 
-     * @var \FrameWork\Container
+     * @var \C\Container
      */
     public $container;
 
     /**
      * 中间件
      * 
-     * @var \FrameWork\Middleware_Map
+     * @var \C\Middleware\Map
      */
     protected $middleware;
 
@@ -49,7 +49,7 @@ class BaseApp {
     /**
      * 自动加载
      * 
-     * @var \FrameWork\Loader
+     * @var \C\Loader
      */
     public static $loader;
 
@@ -65,7 +65,7 @@ class BaseApp {
      *
      * @param  string  $name
      * @param  array   $parameters
-     * @return mixed|\FrameWork\BaseApp
+     * @return mixed|\C\BaseApp
      */
     public static function app($name = null, $parameters = [])
     {
@@ -79,7 +79,7 @@ class BaseApp {
     /**
      * 设置应用实例
      *
-     * @param  \FrameWork\BaseApp
+     * @param  \C\BaseApp
      * @return void
      */
     public static function setApp($app)
@@ -207,7 +207,7 @@ class BaseApp {
      *
      * @param  string|array $name
      * @param  mixed        $values
-     * @return \FrameWork\Option
+     * @return \C\Option
      */
     public function configure($name = null, $value = null)
     {
@@ -242,7 +242,7 @@ class BaseApp {
      * @param  string           $name
      * @param  object|callable  $definition
      * @param  bool             $shared
-     * @return \FrameWork\Container
+     * @return \C\Container
      */
     public function service($name, $definition, $shared = false)
     {
@@ -281,7 +281,7 @@ class BaseApp {
      * @param  string|array  $method GET|POST|PUT|PATCH|DELETE|OPTIONS
      * @param  string        $pattern
      * @param  mixed         $handler
-     * @return \FrameWork\Route
+     * @return \C\Route
      */
     public function map($method, $pattern, $handler)
     {
@@ -324,7 +324,7 @@ class BaseApp {
      * @see    map()
      * @param  string $pattern
      * @param  mixed  $handler
-     * @return \FrameWork\Route
+     * @return \C\Route
      */
     public function get($pattern, $handler)
     {
@@ -337,7 +337,7 @@ class BaseApp {
      * @see    map()
      * @param  string $pattern
      * @param  mixed  $handler
-     * @return \FrameWork\Route
+     * @return \C\Route
      */
     public function post($pattern, $handler)
     {
@@ -350,7 +350,7 @@ class BaseApp {
      * @see    map()
      * @param  string $pattern
      * @param  mixed  $handler
-     * @return \FrameWork\Route
+     * @return \C\Route
      */
     public function put($pattern, $handler)
     {
@@ -363,7 +363,7 @@ class BaseApp {
      * @see    map()
      * @param  string $pattern
      * @param  mixed  $handler
-     * @return \FrameWork\Route
+     * @return \C\Route
      */
     public function patch($pattern, $handler)
     {
@@ -376,7 +376,7 @@ class BaseApp {
      * @see    map()
      * @param  string $pattern
      * @param  mixed  $handler
-     * @return \FrameWork\Route
+     * @return \C\Route
      */
     public function delete($pattern, $handler)
     {
@@ -389,7 +389,7 @@ class BaseApp {
      * @see    map()
      * @param  string $pattern
      * @param  mixed  $handler
-     * @return \FrameWork\Route
+     * @return \C\Route
      */
     public function options($pattern, $handler)
     {
@@ -401,7 +401,7 @@ class BaseApp {
      *
      * @param  string $pattern
      * @param  mixed  $handler
-     * @return \FrameWork\Route
+     * @return \C\Route
      */
     public function any($pattern, $handler)
     {
@@ -436,9 +436,9 @@ class BaseApp {
                 $res = $middleware->call();
 
             } else {
-                throw new \C\Exception\NotFoundException("Page Not Found");
+                throw new \C\E\NotFoundException("Page Not Found");
             }
-        } catch (\C\Exception\NotFoundException $e) {
+        } catch (\C\E\NotFoundException $e) {
             if (! $this->middleware->has('notFoundHandler')) {
                 throw $e;
             }
@@ -504,7 +504,7 @@ class BaseApp {
         $response = new Response();
 
         try {
-            $status = $e instanceof \C\Exception\NotFoundException ? 404 : 500;
+            $status = $e instanceof \C\E\NotFoundException ? 404 : 500;
             $response->setStatus($status);
             $response->setBody($status == 404 ? static::notFound($e) : static::error($e));
             $response->respond();
