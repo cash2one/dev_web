@@ -24,14 +24,21 @@
     |-- P [packages]
     |   |-- App
     |   |    |-- M [modules]
-    |   |        |-- mApp.php
-    |   |        |-- mApp
-    |   |        |    |-- controller
-    |   |        |     
-    |   |        |-- mUser
-    |   |             |-- L [controller]
-    |   |             |-- O [objects]
-    |   |             |-- V [views]
+    |   |    |   |-- mApp.php
+    |   |    |   |-- mApp
+    |   |    |   |    |-- L [controller]
+    |   |    |   |     
+    |   |    |   |-- mUser
+    |   |    |        |-- L [controller]
+    |   |    |        |-- O [objects]
+    |   |    |        |-- V [views]
+    |   |    |         
+    |   |    |-- L [controller]
+    |   |    |-- O [objects over modules]
+    |   |    |-- V [views over modules]
+    |   |    |-- assets
+    |   |         |-- css
+    |   |     
     |   |-- Business
     |   |    |-- M [modules]
     |   |        |-- mBlog
@@ -41,10 +48,15 @@
     |-- A [apps]
     |   |-- Blog
     |        |-- M [modules]
-    |            |-- mBlog
-    |                 |-- controller
-    |                 |-- objects
-    |                 |-- views
+    |        |   |-- mBlog
+    |        |        |-- controller
+    |        |        |-- objects
+    |        |        |-- views
+    |        |-- L [controller]
+    |        |-- O [objects over modules]
+    |        |-- V [views over modules]
+    |   |    |-- assets
+    |   |         |-- css
     |   
     |-- V [views]
     |-- assets
