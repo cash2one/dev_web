@@ -7,6 +7,8 @@
    Object    -- O
    Data      -- D
    View      -- V
+   Html      -- H ¾²Ì¬ web Ò³
+   Resource  -- R ×ÊÔ´ gif wav png jpeg
    Module    -- M
    Exception -- E
    Controller -- L [logic]
