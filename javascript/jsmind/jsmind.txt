@@ -1,0 +1,6 @@
+jsMind是一个纯javascript实现的思维导图类库
+基于html5的canvas实现，以BSD协议开源
+
+http://www.oschina.net/p/jsmind
+
+https://github.com/hizzgdev/jsmind
