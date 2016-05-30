@@ -8,7 +8,9 @@
    Data      -- D
    View      -- V
    Html      -- H 静态 web 页
-   Resource  -- R 资源 gif wav png jpeg
+   Resource  -- F 资源 gif wav png jpeg
+                  files
+   Router    -- R 路由
    Module    -- M
    Exception -- E
    Controller -- L [logic]
