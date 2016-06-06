@@ -1,0 +1,115 @@
+PHP中打开URL地址的几种方法总结，这里的函数主要用于小偷采集等函数。
+1: 用file_get_contents 
+以get方式获取内容 
+复制代码 代码如下:
+ 
+<?php 
+$url='http://www.baidu.com/'; 
+ 
+$html = file_get_contents($url); 
+//print_r($http_response_header); 
+ 
+ec($html); 
+printhr(); 
+printarr($http_response_header); 
+ 
+printhr(); 
+?> 
+ 
+示例代码2: 用fopen打开url, 
+以get方式获取内容 
+复制代码 代码如下:
+ 
+<? 
+$fp = fopen($url, 'r'); 
+ 
+printarr(stream_get_meta_data($fp)); 
+printhr(); 
+while(!feof($fp)) { 
+ 
+$result .= fgets($fp, 1024); 
+} 
+echo "url body: $result"; 
+ 
+printhr(); 
+fclose($fp); 
+?> 
+ 
+ 
+示例代码3：用file_get_contents函数,以post方式获取url 
+复制代码 代码如下:
+ 
+<?php 
+$data = array ('foo' => 
+'bar'); 
+$data = http_build_query($data); 
+$opts = array ( 
+'http' 
+=> array ( 
+'method' => 'POST', 
+'header'=> "Content-type: 
+application/x-www-form-urlencoded" . 
+"Content-Length: " . strlen($data) . 
+"", 
+'content' => $data 
+), 
+); 
+$context = 
+stream_context_create($opts); 
+$html = 
+file_get_contents('http://localhost/e/admin/test.html', false, $context); 
+ 
+echo $html; 
+?> 
+ 
+ 
+示例代码4：用fsockopen函数打开url，以get方式获取完整的数据，包括header和body 
+复制代码 代码如下:
+ 
+<? 
+function get_url 
+($url,$cookie=false) { 
+$url = parse_url($url); 
+$query = 
+$url[path]."?".$url[query]; 
+ec("Query:".$query); 
+$fp = fsockopen( 
+$url[host], $url[port]?$url[port]:80 , $errno, $errstr, 30); 
+if (!$fp) { 
+ 
+return false; 
+} else { 
+$request = "GET $query HTTP/1.1"; 
+ 
+$request .= "Host: $url[host]"; 
+$request .= "Connection: Close"; 
+ 
+if($cookie) $request.="Cookie: $cookie\n"; 
+$request.=""; 
+ 
+fwrite($fp,$request); 
+while(!@feof($fp)) { 
+$result .= @fgets($fp, 
+1024); 
+} 
+fclose($fp); 
+return $result; 
+} 
+} 
+ 
+//获取url的html部分，去掉header 
+function GetUrlHTML($url,$cookie=false) { 
+ 
+$rowdata = get_url($url,$cookie); 
+if($rowdata) 
+{ 
+$body= 
+stristr($rowdata,""); 
+$body=substr($body,4,strlen($body)); 
+return $body; 
+ 
+} 
+return false; 
+} 
+ 
+?>
