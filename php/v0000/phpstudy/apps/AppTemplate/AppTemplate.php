@@ -1,13 +1,13 @@
 <?php
 
-namespace  eshop;
+namespace  template;
 
 require '..\..\framework\BaseApp.php';
 
-class EShop  extends \core\BaseApp { 
+class AppTemplate  extends \core\BaseApp { 
     
     public function __construct()
     {        
-         echo "EShop App Create";
+         echo "AppTemplate Create";
     }
 }

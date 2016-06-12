@@ -1,4 +1,9 @@
-<?php 
+<?php
+
+namespace  eshop;
+
+session_start();
+ 
 echo defined("APP");
 echo "<br>";
 if (0 != defined("APP")) {
@@ -8,4 +13,8 @@ if (0 != defined("APP")) {
  }
 echo "<br>";
 echo "good";
+
+include 'EShop.php';
+$app = new EShop();
+
 ?>
