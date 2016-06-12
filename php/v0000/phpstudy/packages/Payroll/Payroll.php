@@ -1,4 +1,8 @@
 <?php
 
-class PayrollPack extends BasePack {
+namespace  packPayroll;
+
+require '\framework\BasePack.php';
+
+class PayrollPack extends \core\BasePack {
 }

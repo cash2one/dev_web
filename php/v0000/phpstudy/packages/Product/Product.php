@@ -1,4 +1,8 @@
 <?php
 
-class ProductPack extends BasePack {
+namespace  packProduct;
+
+require '\framework\BasePack.php';
+
+class ProductPack extends \core\BasePack {
 }

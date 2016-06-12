@@ -1,4 +1,8 @@
 <?php
 
-class SalesPack extends BasePack {
+namespace  packSales;
+
+require '\framework\BasePack.php';
+
+class SalesPack extends \core\BasePack {
 }

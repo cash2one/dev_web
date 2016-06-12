@@ -1,4 +1,8 @@
 <?php
 
-class PayPack extends BasePack {
+namespace  packPay;
+
+require '\framework\BasePack.php';
+
+class PayPack extends \core\BasePack {
 }

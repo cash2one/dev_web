@@ -1,4 +1,8 @@
 <?php
 
-class ShipmentPack extends BasePack {
+namespace  packShipment;
+
+require '\framework\BasePack.php';
+
+class ShipmentPack extends \core\BasePack {
 }
