@@ -20,5 +20,7 @@ class EShop_Admin  extends \core\BaseApp {
     public function run() {
          echo "EShopAdmin App Run";
          echo "<br>";
+         
+         include "\html\homepage.html";
     }
 }
