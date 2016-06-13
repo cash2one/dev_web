@@ -5,6 +5,11 @@ $modules = array(
     'user' => '用户' //用户模块
 );
 
+if (!defined('APP'))  {
+    //die('no app');//防止直接访问
+    die('no app');//防止直接访问
+}
+
 require '\framework\BasePack.php';
 
 class AppPack extends \core\BasePack {

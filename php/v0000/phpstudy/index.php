@@ -19,5 +19,6 @@
    
    $module_file = ".\\test\\router.php";
    $module_file = ".\\apps\\eshop\\index.php";
+   $module_file = ".\\apps\\eshop_admin\\index.php";
    include $module_file;
 ?>

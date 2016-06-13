@@ -2,6 +2,8 @@
 
 namespace  packTemplate;
 
+if (!defined('APP'))  die('');//防止直接访问
+
 require '\framework\BasePack.php';
 
 class PackTemplatePack extends \core\BasePack {

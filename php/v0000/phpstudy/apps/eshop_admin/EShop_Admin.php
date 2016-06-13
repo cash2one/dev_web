@@ -1,23 +1,24 @@
 <?php
 
-namespace  eshop;
+namespace  eshop_admin;
 
 require '\framework\BaseApp.php';
 require '\packages\App\App.php';
 
-class EShop  extends \core\BaseApp { 
+class EShop_Admin  extends \core\BaseApp { 
     
     public function __construct()
     {        
         parent::__construct();
-         echo "EShop App Create";
+         echo "EShopAdmin App Create";
          echo "<br>";
          
          $apppack = new \packApp\AppPack();         
     }
     
+
     public function run() {
-         echo "EShop App Run";     
-         echo "<br>";   
+         echo "EShopAdmin App Run";
+         echo "<br>";
     }
 }

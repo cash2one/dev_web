@@ -1,6 +1,6 @@
 <?php
 
-namespace  eshop;
+namespace  eshop_admin;
 session_start();
  
 echo defined("APP");
@@ -13,7 +13,7 @@ if (0 != defined("APP")) {
 echo "<br>";
 echo "good";
 
-include 'EShop.php';
-$app = new EShop();
+include 'EShop_Admin.php';
+$app = new EShop_Admin();
 $app->run();
 ?>
