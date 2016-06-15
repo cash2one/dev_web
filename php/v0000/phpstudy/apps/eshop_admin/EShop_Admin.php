@@ -20,6 +20,9 @@ class EShop_Admin  extends \core\BaseApp {
     public function run() {
          echo "EShopAdmin App Run";
          echo "<br>";
+         // http://phpstudy.com/?action=test&param1=good
+         $param = $_SERVER["QUERY_STRING"];
+         echo $param."<br>";
          
          include "\html\homepage.html";
     }
