@@ -23,7 +23,10 @@ class EShop_Admin  extends \core\BaseApp {
          // http://phpstudy.com/?action=test&param1=good
          $param = $_SERVER["QUERY_STRING"];
          echo $param."<br>";
-         
+         echo $_SERVER['SERVER_ADDR'];
+         echo "<br>";
+         echo $_SERVER['SERVER_NAME'];
+         echo "<br>";
          include "\html\homepage.html";
     }
 }
