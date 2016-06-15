@@ -23,5 +23,15 @@
          define("APP","eshop");
      }
    }   
+   echo "REQUEST_URI:".$_SERVER['REQUEST_URI']."<br>";
+   echo "PHP_SELF:".$_SERVER["PHP_SELF"]."<br>";
+   echo "QUERY_STRING:".$_SERVER["QUERY_STRING"]."<br>";
+   echo "SERVER_ADDR:".$_SERVER['SERVER_ADDR']."<br>";
+   echo "SERVER_NAME:".$_SERVER['SERVER_NAME']."<br>";
+   echo "REQUEST_METHOD:".$_SERVER['REQUEST_METHOD']."<br>";
+   echo "SERVER_PROTOCOL:".$_SERVER['SERVER_PROTOCOL']."<br>";
+   echo __FILE__."<br>";
+   echo "**********************<br>";
+   //echo $GLOBALS['HTTP_RAW_POST_DATA']."<br>";
    include $module_file;
 ?>

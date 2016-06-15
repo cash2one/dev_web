@@ -10,23 +10,28 @@ class EShop_Admin  extends \core\BaseApp {
     public function __construct()
     {        
         parent::__construct();
-         echo "EShopAdmin App Create";
-         echo "<br>";
-         
+         echo "EShopAdmin App Create"."<br>";
+         echo __FILE__."<br>";
+         echo "**********************<br>";         
          $apppack = new \packApp\AppPack();         
-    }
-    
+    }    
 
     public function run() {
-         echo "EShopAdmin App Run";
-         echo "<br>";
+         echo "EShopAdmin App Run"."<br>";
          // http://phpstudy.com/?action=test&param1=good
-         $param = $_SERVER["QUERY_STRING"];
-         echo $param."<br>";
-         echo $_SERVER['SERVER_ADDR'];
-         echo "<br>";
-         echo $_SERVER['SERVER_NAME'];
-         echo "<br>";
          include "\html\homepage.html";
+
+         if (isset($_POST)) {
+             if(!empty($_POST["param"])) {                 
+                 $postdata = $_POST["param"];
+                 if (!empty($postdata)) {
+                     echo "name:".$_POST["inputuser"]."<br>";
+                     echo "password:".$postdata[1]."<br>";
+                 };                            
+             }  else {
+                 echo "name:".$_POST["inputuser"]."<br>";
+                 echo "password:".$_POST["inputpwd"]."<br>";
+             }
+         }
     }
 }
