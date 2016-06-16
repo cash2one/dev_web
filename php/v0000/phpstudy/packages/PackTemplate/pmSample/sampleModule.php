@@ -1,8 +1,8 @@
 <?php
 
-namespace  App\user;
+namespace  template;
 
-class User extends BaseModule {
+class sampleModule extends BaseModule {
     
     public function login($userObj) {
         

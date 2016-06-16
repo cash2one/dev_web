@@ -1,6 +1,6 @@
 <?php
 
-namespace  packTemplate;
+namespace  template;
 
 if (!defined('APP'))  die('');//防止直接访问
 

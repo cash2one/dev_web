@@ -29,8 +29,12 @@ class EShop_Admin  extends \core\BaseApp {
                      echo "password:".$postdata[1]."<br>";
                  };                            
              }  else {
-                 echo "name:".$_POST["inputuser"]."<br>";
-                 echo "password:".$_POST["inputpwd"]."<br>";
+                 if(!empty($_POST["inputuser"])) {  
+                     echo "name:".$_POST["inputuser"]."<br>";
+                 }
+                 if(!empty($_POST["inputpwd"])) {  
+                     echo "password:".$_POST["inputpwd"]."<br>";
+                 }
              }
          }
     }
