@@ -23,12 +23,20 @@
          define("APP","eshop");
      }
    }   
+   echo "REQUEST_METHOD:".$_SERVER['REQUEST_METHOD']."<br>";
+   $httprequest = $_SERVER['REQUEST_METHOD'];
+   
+   if ("GET" === $httprequest) {
+       echo "is get"."<br>";
+   } else {
+       echo "is not get"."<br>";
+   }
+   
    echo "REQUEST_URI:".$_SERVER['REQUEST_URI']."<br>";
    echo "PHP_SELF:".$_SERVER["PHP_SELF"]."<br>";
    echo "QUERY_STRING:".$_SERVER["QUERY_STRING"]."<br>";
    echo "SERVER_ADDR:".$_SERVER['SERVER_ADDR']."<br>";
    echo "SERVER_NAME:".$_SERVER['SERVER_NAME']."<br>";
-   echo "REQUEST_METHOD:".$_SERVER['REQUEST_METHOD']."<br>";
    echo "SERVER_PROTOCOL:".$_SERVER['SERVER_PROTOCOL']."<br>";
    echo __FILE__."<br>";
    echo "**********************<br>";
