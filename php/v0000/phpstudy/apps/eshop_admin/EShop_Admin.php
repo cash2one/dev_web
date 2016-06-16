@@ -13,7 +13,7 @@ class EShop_Admin  extends \core\BaseApp {
          echo "EShopAdmin App Create"."<br>";
          echo __FILE__."<br>";
          echo "**********************<br>";         
-         $apppack = new \packApp\AppPack();         
+         $apppack = new \App\AppPack();         
     }    
 
     public function run() {
