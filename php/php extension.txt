@@ -1,0 +1,14 @@
+php.ini
+
+http://pecl.php.net/package/memcache
+php_memcache.dll
+extension=php_memcache.dll
+
+http://pecl.php.net/package/redis
+php_redis.dll
+extension=php_redis.dll
+
+
+
+
+
