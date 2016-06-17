@@ -38,7 +38,11 @@
    echo "SERVER_ADDR:".$_SERVER['SERVER_ADDR']."<br>";
    echo "SERVER_NAME:".$_SERVER['SERVER_NAME']."<br>";
    echo "SERVER_PROTOCOL:".$_SERVER['SERVER_PROTOCOL']."<br>";
-   echo __FILE__."<br>";
+   echo "file:".__FILE__."<br>";
+   echo "dir:".__DIR__."<br>";
+   // 这个变量在调试错误的时候，还是比较有作用的，其他的时候，没什么用处
+   echo "line:".__LINE__."<br>"; 
+   echo "namespace:".__NAMESPACE__."<br>";
    echo "**********************<br>";
    //echo $GLOBALS['HTTP_RAW_POST_DATA']."<br>";
    include $module_file;
