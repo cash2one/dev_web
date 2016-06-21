@@ -9,6 +9,8 @@
    //var_dump($_AppPath); // "E:\workspace_php\phpstudy\index.php"
    // 这里就是重定向
    //$module_file = ".\\test\\test1.php";
+   
+   function runindex1() {
    ini_set('session.gc_maxlifetime', '86400');     //设置Session最大超时时间为一天   
    $site = $_SERVER['SERVER_NAME'];
    if ("phpstudy.com" === $site) {
@@ -46,4 +48,21 @@
    echo "**********************<br>";
    //echo $GLOBALS['HTTP_RAW_POST_DATA']."<br>";
    include $module_file;
+   }
+
+   function runindex2() {
+     //echo "REQUEST_URI:".$_SERVER['REQUEST_URI']."<br>";
+       $curl = curl_init();        //初始化实例
+       curl_setopt($curl, CURLOPT_URL, "http://www.hepaidai.com"); //设置URL地址
+       curl_setopt($curl, CURLOPT_URL, "http://www.oschina.net/");
+       curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 5);        //5秒连接超时
+       curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);        //设为1返回Http响应结果
+     //伪造客户端，最好设一下，有些网站会根据客户端来阻隔请求的
+     curl_setopt($curl, CURLOPT_USERAGENT, 'User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0');        
+     $response = curl_exec($curl);        //curl执行http请求，响应存到$response变量中
+     echo  $response;
+     $state = curl_getinfo($curl, CURLINFO_HTTP_CODE);        //可以用这句来获取响应的状态码
+     curl_close($curl);        //
+   }
+   runindex2();
 ?>
